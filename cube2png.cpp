@@ -130,23 +130,23 @@ LUTCube parseLUTCube(const string& str)
 
 	// 初始化3D LUT的索引
 	int index = 0;
-		// 如果字符串数组中没有匹配的3D LUT的值，则继续查找
+	// 如果字符串数组中没有匹配的3D LUT的值，则继续查找
 	while (index < 10 && !std::regex_search(lines[index], regexLineValue))  // lines.size()  --> 只检测前10行
-		{
-			index++;
-		}
+	{
+		index++;
+	}
 
-		// 删除字符串数组中的第一个元素
-		lines.erase(lines.begin(), lines.begin() + index);
-		// 重新设置字符串数组的大小
-		lines.resize(size * size * size);
+	// 删除字符串数组中的第一个元素
+	lines.erase(lines.begin(), lines.begin() + index);
+	// 重新设置字符串数组的大小
+	lines.resize(size * size * size);
 
-		// 创建一个float数组，用于存放3D LUT的值
-		vector<float> array;
-		// 遍历字符串数组，将每一行的值转换为float类型
+	// 创建一个float数组，用于存放3D LUT的值
+	vector<float> array;
+	// 遍历字符串数组，将每一行的值转换为float类型
 	cout << "开始解析float数据···" << endl;
 	for (string& line : lines)
-		{
+	{
 		// 法一：较慢
 		//smatch result;
 		//regex_search(line, result, regexLineValue);
@@ -162,9 +162,9 @@ LUTCube parseLUTCube(const string& str)
 		}
 	}
 	cout << "解析float数据完成." << endl;
-		// 返回3D LUT
-		return LUTCube(size, array);
-	}
+	// 返回3D LUT
+	return LUTCube(size, array);
+}
 
 void fillLUTOnCanvas(LUTCube& lut, vector<unsigned char>& data)
 {
