@@ -16,6 +16,9 @@ PNG image resolution can be set to 512*512（64*64*64）,  264*264(33*33*33), ·
 ## yuyv2grayRgb.py
  demo of trans yuyv to gray/rbg by opencv.
 
+## videoSpeeder.py
+ change video speed， at the same time Keep the pitch.
+
 ## showtiff.py
  save single channel tiff image.
 
